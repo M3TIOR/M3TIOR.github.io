@@ -1,3 +1,8 @@
+<?php
+    /*
+     *
+     */
+?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie eq8 lt9 lt10 "><![endif]-->
 <!--[if IE 9]><html class="ie eq9 lt10 "><![endif]-->
@@ -19,6 +24,7 @@
         <meta name="description" content="About M3ITOR!">
         <meta name="keywords" content="Developer, Person, People">
         <meta name="author" content="M3TIOR">
+        <!--
         <style>
             /* DOM LIST:
              *   ID::
@@ -33,18 +39,77 @@
              *     skin - fancy animation something or other
              *     muscle - javascript leverage
              */
+
+             //Page js(POWER) handle
+             /* Ensures the page is html-only when off.
+              * I realize this is a hack and doesn't optimize anything,
+              * I just thought it would be cool to add.
+              */
+             .off{
+                 opacity:default;
+                 background:default;
+                 border:default;
+                 bottom:default;
+                 clear:default;
+                 clip:default;
+                 display:default;
+                 float:default;
+                 height:default;
+                 left:default;
+                 margin:default;
+                 padding:default;
+                 position:default;
+                 right:default;
+                 top:default;
+                 visibility:default;
+                 width:default;
+                 vertical-align:default;
+                 animation:none;
+                 backface-visibility:hidden;
+                 perspective:none;
+                 transform:none;
+                 transition:none;
+                 filter:none;
+                 image-resolution:default;
+                 mask:default;
+             }
+             .bone{
+                 display: none;
+             }
         </style>
         <script>
-
+            var PAGE={
+                bone:undefined,
+                skin:undefined,
+                muscle:undefined,
+                execute:function(){
+                    if (typeof(Storage) !== "undefined") {
+                        //Handle web storage when it's enabled
+                        initialize = function(simulated, internal){
+                                simulated = localStorage.getItem(internal);
+                                if(simulated == null || simulated == undefined)
+                                    simulated=true, localStorage.setItem(internal, true);
+                        };
+                        initialize(this.bone, "bone");
+                        initialize(this.skin, "skin");
+                        initialize(this.muscle, "muscle");
+                        delete initialize;
+                    } else {
+                        //Web storage unavailable, default to cookies.
+                    }
+                },
+                derp:undefined
+            };
         </script>
+        -->
     </head>
-    <body>
-        <h1 style="text-align: center;">
-            Who am I? Only a shooting star of course!
-        </h1>
-        <div id="ASCII-art">
+    <body onload="PAGE.execute()">
+        <div id="ASCII-art" class="bone">
 
         </div>
+        <h1 align="center">
+            Who am I? Only a shooting star of course!
+        </h1>
         <!-- Background Panel -->
         <img id="ArtPanel"></img>
         <!-- Links -->

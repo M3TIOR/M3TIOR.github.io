@@ -34,9 +34,10 @@
              *     Recent -
              *
              *   CLASS::
-             *     bone - hide class when css is executed
-             *     skin - fancy animation something or other
-             *     muscle - javascript leverage
+             *     bone -- hide class when css is executed
+             *     skin -- fancy animation something or other
+             *     muscle -- javascript leverage
+             *     list-btn -- list button optimization
              */
 
              //Page js(POWER) handle
@@ -45,47 +46,71 @@
               * I just thought it would be cool to add.
               */
              .off{
-                 opacity:default;
-                 background:default;
-                 border:default;
-                 bottom:default;
-                 clear:default;
-                 clip:default;
-                 display:default;
-                 float:default;
-                 height:default;
-                 left:default;
-                 margin:default;
-                 padding:default;
-                 position:default;
-                 right:default;
-                 top:default;
-                 visibility:default;
-                 width:default;
-                 vertical-align:default;
-                 animation:none;
-                 backface-visibility:hidden;
+                 opacity:initial;
+                 background:initial;
+                 border:initial;
+                 bottom:initial;
+                 clear:initial;
+                 clip:initial;
+                 display:initial;
+                 float:initial;
+                 height:initial;
+                 left:initial;
+                 margin:initial;
+                 padding:initial;
+                 position:initial;
+                 right:initial;
+                 top:initial;
+                 visibility:initial;
+                 width:initial;
+                 vertical-align:initial;
+                 animation:initial;
+                 backface-visibility:initial;
                  perspective:none;
                  transform:none;
                  transition:none;
                  filter:none;
-                 image-resolution:default;
-                 mask:default;
+                 image-resolution:initial;
+                 mask:initial;
              }
              .bone{
                  display: none;
              }
+
+             //Page CSS
+             #Links{
+
+             }
         </style>
+        <!--
         <script>
             var PAGE={
-                bone:true;
-                skin:true;
-                muscle:true;
+                bone:undefined,
+                skin:undefined,
+                muscle:undefined,
                 execute:function(){
+                    if (typeof(Storage) !== "undefined") {
+                        //Handle web storage when it's enabled
+                        initialize = function(name, value){
+                                value = localStorage.getItem(name);
+                                if(value == null || value == undefined)
+                                    value=true, localStorage.setItem(name, true);
+                        };
+                    } else {
+                        //Web storage unavailable, default to cookies.
+                        initialize = function(name, value){
 
+                        };
+                    }
+                    initialize("bone", this.bone);
+                    initialize("skin", this.skin);
+                    initialize("muscle", this.muscle);
                 },
+
+                end:0 // end of PAGE syntax easy because js is evil
             };
         </script>
+        -->
     </head>
     <body onload="PAGE.execute()">
         <div id="ASCII-art" class="bone">
@@ -97,10 +122,10 @@
         <!-- Background Panel -->
         <img id="ArtPanel"></img>
         <!-- Links -->
-        <div id="Navigation">
+        <div id="Links">
             <h2 class="bone" >Creative Platforms:</h2>
             <ul>
-                <li>
+                <li class="link-btn">
                     <a href="https://www.github.com/M3TIOR">
                         <img id="Github" src="" longdesc="Github"></img>
                         <span class="bone" >
@@ -108,7 +133,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <li class="link-btn">
                     <a href="https://www.gitbook.com/M3TIOR">
                         <img id="Gitbook" src="" longdesc="Gitbook"></img>
                         <span class="bone" >
@@ -116,15 +141,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
-                    <a href="https://www.facebook.com/ASHENSOULSWORDOFM3TIOR">
-                        <img id="Facebook" src="" longdesc="Facebook"></img>
-                        <span class="bone" >
-                            Facebook : https://www.facebook.com/ASHENSOULSWORDOFM3TIOR
-                        </span>
-                    </a>
-                </li>
-                <li>
+                <li class="link-btn">
                     <a href="https://www.youtube.com/channel/UChyesz_3CwKm5EMa_fPpwgQ">
                         <img id="Youtube" src="" longdesc="Youtube"></img>
                         <span class="bone" >
@@ -132,7 +149,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <li class="link-btn">
                     <a href="https://m3tior.deviantart.com/">
                         <img id="DeviantArt" src="" longdesc="DeviantArt"></img>
                         <span class="bone" >
@@ -140,7 +157,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <li class="link-btn">
                     <a href="https://soundcloud.com/null-undefined">
                         <img id="Soundcloud" src="" longdesc="Soundcloud"></img>
                         <span class="bone" >
