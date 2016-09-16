@@ -14,200 +14,117 @@
     <head>
         <title id="TITLE">@M3ITOR</title>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="description" content="About M3ITOR!">
         <meta name="keywords" content="Developer, Person, People">
         <meta name="author" content="M3TIOR">
-        <style>
-            /* DOM LIST:
-             *   ID::
-             *     ASCII-art - ascii art pane
-             *     ArtPanel - traditional art pane
-             *     Links - social navigation pane
-             *     About -
-             *     Recent -
-             *
-             *   CLASS::
-             *     bone -- hide class when css is executed
-             *     *-skin -- fancy animation something or other
-             *     *-muscle -- javascript leverage
-             *
-             *     link-btn -- linl button optimization
-             *     link-img -- link image optimization
-             */
-
-             /*Globals, because globals...*/
-             *{
-                 z-index:0;
-             }
-
-             /* Page js(POWER) handle */
-             /* Ensures the page is html-only when off. */
-             .off > *{all: initial;}
-             /* As described above, removes text when css is loaded "I hope"*/
-             .bone{display: none;}
-
-             /* Main theme initiator before javascript */
-             [data-color-main]{background-color:#0F0F0F; color:#F0F0F0}
-             [data-color-highlight]{background-color:#220000; color:#FF4444}
-
-             /* Art Panel */
-             #ArtPanel{
-                 z-index:-1;
-                 height: 100%;
-                 width: 100%;
-             }
-
-             /* About */
-             #About{
-                 padding:5px;
-             }
-
-             /* Link Button Icons */
-             [longdesc=Github]{src: url(https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png);}
-             [longdesc=Gitbook]{src: url(https://avatars2.githubusercontent.com/u/7111340?v=3&s=400);}
-             [longdesc=Youtube]{src: url(https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png);}
-             [longdesc=Soundcloud]{src: url(https://w.soundcloud.com/icon/?color=orange_transparent&size=64);}
-             [longdesc=DeviantArt]{src: url(https://st.deviantart.net/minish/main/logo/logo-mark.png);}
-             #links{
-                 list-style-type:none;
-             }
-             #link-btn{
-
-             }:hover{}
-             #link-img{
-
-             }
-        </style>
-        <!--
-        <script>
-            var MUSCLE={
-                bone:undefined,
-                skin:undefined,
-                muscle:undefined,
-                load:function(){
-                    if (typeof(Storage) !== "undefined") {
-                        //Handle web storage when it's enabled
-                        initialize = function(name, value){
-                                value = localStorage.getItem(name);
-                                if(value == null || value == undefined)
-                                    value=true, localStorage.setItem(name, true);
-                        };
-                    } else {
-                        //Web storage unavailable, default to cookies.
-                        initialize = function(name, value){
-
-                        };
-                    }
-                    initialize("bone", this.bone);
-                    initialize("skin", this.skin);
-                    initialize("muscle", this.muscle);
-                },
-
-                end:0 // end of PAGE syntax easy because js is evil
-            };
-        </script>
-        -->
+        <link id="@ART" type="image/png" rel="favicon" href="favicon.png">
+        <link id="@CSS" type="text/css" rel="stylesheet" href="index.css" />
+        <!--<script id="@EMCAScript" type="text/javascript" async src="index.js" />-->
+        <meta id="@DEATH" onkeyup="MUSCLE.kill()" accesskey="d" accesskey="i" accesskey="e">
+        <svg id="@LOGO" width="1000" height="1000">
+            <path />
+        </svg>
     </head>
-    <body onload="MUSCLE.load()" data-color-main style="margin:0px">
-        <div id="ASCII-art" class="bone"></div>
-        <img id="ArtPanel" src="art/logoburstV2.png" style="z-index:-1;"></img>
-        <!-- Background Panels -->
-
-        <div id="Title-Box">
-            <h1 align="center">
+    <body onload="MUSCLE.load()" data-color-main>
+        <div id="MuscleFatigue"></div>
+        <div id="Art-Panel">
+            <h1 id="CatchPhrase" data-color-highlight align="center">
                 Who am I? Only a shooting star of course!
             </h1>
         </div>
-
-        <div>
-            <!-- Links -->
-            <h2 class="bone" >Creative Platforms:</h2>
-            <ul id="links" data-color-highlight>
-                <li class="link-btn">
-                    <a href="https://www.github.com/M3TIOR">
-                        <img class="link-img" longdesc="Github"></img>
-                        <span class="bone" >
-                            Github : https://www.github.com/M3TIOR
-                        </span>
-                    </a>
-                </li>
-                <li class="link-btn">
-                    <a href="https://www.gitbook.com/M3TIOR">
-                        <img class="link-img" longdesc="Gitbook"></img>
-                        <span class="bone" >
-                            Gitbook : https://www.gitbook.com/M3TIOR
-                        </span>
-                    </a>
-                </li>
-                <li class="link-btn">
-                    <a href="https://www.youtube.com/channel/UChyesz_3CwKm5EMa_fPpwgQ">
-                        <img class="link-img" longdesc="Youtube"></img>
-                        <span class="bone" >
-                            Youtube : https://www.youtube.com/channel/UChyesz_3CwKm5EMa_fPpwgQ
-                        </span>
-                    </a>
-                </li>
-                <li class="link-btn">
-                    <a href="https://m3tior.deviantart.com/">
-                        <img class="link-img" longdesc="DeviantArt"></img>
-                        <span class="bone" >
-                            DeviantArt : https://m3tior.deviantart.com/
-                        </span>
-                    </a>
-                </li>
-                <li class="link-btn">
-                    <a href="https://soundcloud.com/null-undefined">
-                        <img class="link-img" longdesc="Soundcloud"></img>
-                        <span class="bone" >
-                            Soundcloud : https://soundcloud.com/null-undefined
-                        </span>
-                    </a>
-                </li>
-            </ul>
+        <!-- Background Panels -->
+        <div id="Body-Box">
+            <div>
+                <!-- Links -->
+                <h2 class="bone" >Creative Platforms:</h2>
+                <ul id="links" data-color-highlight>
+                    <li class="link-btn">
+                        <a href="https://www.github.com/M3TIOR">
+                            <img class="link-img" longdesc="Github"></img>
+                            <span class="bone" >
+                                Github : https://www.github.com/M3TIOR
+                            </span>
+                        </a>
+                    </li>
+                    <li class="link-btn">
+                        <a href="https://www.gitbook.com/M3TIOR">
+                            <img class="link-img" longdesc="Gitbook"></img>
+                            <span class="bone" >
+                                Gitbook : https://www.gitbook.com/M3TIOR
+                            </span>
+                        </a>
+                    </li>
+                    <li class="link-btn">
+                        <a href="https://www.youtube.com/channel/UChyesz_3CwKm5EMa_fPpwgQ">
+                            <img class="link-img" longdesc="Youtube"></img>
+                            <span class="bone" >
+                                Youtube : https://www.youtube.com/channel/UChyesz_3CwKm5EMa_fPpwgQ
+                            </span>
+                        </a>
+                    </li>
+                    <li class="link-btn">
+                        <a href="https://m3tior.deviantart.com/">
+                            <img class="link-img" longdesc="DeviantArt"></img>
+                            <span class="bone" >
+                                DeviantArt : https://m3tior.deviantart.com/
+                            </span>
+                        </a>
+                    </li>
+                    <li class="link-btn">
+                        <a href="https://soundcloud.com/null-undefined">
+                            <img class="link-img" longdesc="Soundcloud"></img>
+                            <span class="bone" >
+                                Soundcloud : https://soundcloud.com/null-undefined
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Scrolling Content -->
+            <!-- About Me -->
+            <div id="About">
+                <h2>About me:</h2>
+                <p>
+                    I'm a programmer, philosopher, artist, musician, you name it. But I guess
+                    you could simplify the statement to <b><i>really negative academic...</i></b>
+                    I say "negative" because the most artistic people are usually the most miserable.
+                    If you've seen my work then you know I'm the kind of person who puts their best
+                    effort into everything they do. The most optimized code. The widest variety of
+                    muscial genres, and harmonizing chords. The heart that's poured into all of my
+                    art. Hell, I spend day's pondering deep questions like <i>"how does quantum
+                    physics play a part in our thoughts and actions?"</i> But I
+                    should probably let my work speak for itself rather than talk
+                    away a good reputation. Especially when the last question has variable
+                    relevance to why you're here.
+                </p>
+                <p>
+                    If you want a self starter with high attention to detail, I'm your girl.
+                    I usually pick up a
+                    skill the first or second time I'm introduced to it. But my best skill, and
+                    what I love to do the most, is programming. I've mastered C, Assembly, and
+                    javascript thus far. I guaruntee, if you need me to program in a language I
+                    don't already know, I'll be proficient in at most a week. While I haven't
+                    decided on a specific programming field to persue, I admire them all.
+                    To me programming
+                    is the magic of logic at work.
+                </p>
+                <p>
+                    If you're an employer looking to hire me, you can contact me at
+                    <a href="mailto:cplusplusook@gmail.com">cplusplusook@gmail.com</a>.
+                    I can guaruntee you, I'll put my best foot forward and be the best
+                    investment you ever made. Otherwise, I really have no advice for you
+                    besides to have a great day!
+                </p>
+                <noscript class="bone">
+                    <b><i>
+                        If you see this, it means you're either debugging, or loaded
+                        the page in html-only mode. Congratulations! This is my cover letter!
+                        Don't you feel so accomplished now?
+                    </i></b>
+                </noscript>
+            </div>
+            <div id=Recent></div>
         </div>
-        <!-- Scrolling Content -->
-        <!-- About Me -->
-        <div id="About">
-            <h2>About me:</h2>
-            <p>
-                I'm a programmer, philosopher, artist, musician, you name it. But I guess
-                you could simplify the statement to <b><i>really negative academic...</i></b>
-                I say "negative" because the most artistic people are usually the most miserable.
-                If you've seen my work then you know I'm the kind of person who puts their best
-                effort into everything they do. The most optimized code. The widest variety of
-                muscial genres, and harmonizing chords. The heart that's poured into all of my
-                art. Hell, I spend day's pondering deep questions like <i>"how does quantum
-                physics play a part in our thoughts and actions?"</i> But I
-                should probably let my work speak for itself rather than talk
-                away a good reputation. Especially when the last question has variable
-                relevance to why you're here.
-            </p>
-            <p>
-                If you want a self starter with high attention to detail, I'm your girl.
-                I usually pick up a
-                skill the first or second time I'm introduced to it. But my best skill, and
-                what I love to do the most, is programming. I've mastered C, Assembly, and
-                javascript thus far. I guaruntee, if you need me to program in a language I
-                don't already know, I'll be proficient in at most a week. While I haven't
-                decided on a specific programming field to persue, I admire them all.
-                To me programming
-                is the magic of logic at work.
-            </p>
-            <p>
-                If you're an employer looking to hire me, you can contact me at
-                <a href="mailto:cplusplusook@gmail.com">cplusplusook@gmail.com</a>.
-                I can guaruntee you, I'll put my best foot forward and be the best
-                investment you ever made. Otherwise, I really have no advice for you
-                besides to have a great day!
-            </p>
-            <noscript class="bone">
-                <b><i>
-                    If you see this, it means you're either debugging, or loaded
-                    the page in html-only mode. Congratulations! This is my cover letter!
-                    Don't you feel so accomplished now?
-                </i></b>
-            </noscript>
-        </div>
-        <div id=Recent></div>
     </body>
 </html>
