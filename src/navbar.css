@@ -74,6 +74,7 @@ html{
 }
 #navigation button{
 	background: radial-gradient(var(--color-primary-dark), var(--color-primary));
+	border-right: 1px solid #000;
 	height: calc(var(--navbar-size) * 1px);
 	width: calc(var(--navbar-size) * 1px);
 	float: left; /* everything breaks otherwise... */
@@ -84,7 +85,6 @@ html{
 #navigation img{
 	height: calc(var(--navbar-icon-size) * 1px);
 	width: calc(var(--navbar-icon-size) * 1px);
-	border-right: 1px solid #000;
 	src: url(icons/logo.svg);
     content: url(icons/logo.svg);
 }
