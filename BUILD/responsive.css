@@ -1,0 +1,99 @@
+/*
+ * M3TIOR 2017
+ *
+ * 	My implementation of general responsive tiling with media queries
+ */
+
+{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	--responsive-width: 0px;
+	--responsive-grid-size: 4;
+	--responsive-grid-mult: 3;
+}
+
+/* Smartwatches or Devices with small screens ----------- */
+@media only screen and (max-width : 319px) {
+	.slim-0 .slim-none{ display: none; }
+	.slim-1, .slim-small{ width: 8%; display: inline-block; }
+	.slim-2{ width: 16%; display: inline-block; }
+	.slim-3, .slim-medium{ width: 25%; display: inline-block; }
+	.slim-4{ width: 32%; display: inline-block; }
+	.slim-5{ width: 41%; display: inline-block; }
+	.slim-6, .slim-large{ width: 50%; display: inline-block; }
+	.slim-7{ width: 58%; display: inline-block; }
+	.slim-8{ width: 66%; display: inline-block; }
+	.slim-9{ width: 75%; display: inline-block; }
+	.slim-10{ width: 83%; display: inline-block; }
+	.slim-11{ width: 91%; display: inline-block; }
+	.slim-12, .slim-extralarge{ width: 100%; display: inline-block; }
+}
+
+/* Smartphones ------------------------------------ */
+@media only screen and (min-width : 320px) and (max-width : 479px) {
+	.mobile-0, .mobile-none{ display: none; display: inline-block; }
+	.mobile-1, .mobile-small{ width: 8%; display: inline-block; }
+	.mobile-2{ width: 16%; display: inline-block; }
+	.mobile-3, .mobile-medium{ width: 25%; display: inline-block; }
+	.mobile-4{ width: 32%; display: inline-block; }
+	.mobile-5{ width: 41%; display: inline-block; }
+	.mobile-6, .mobile-large{ width: 50%; display: inline-block; }
+	.mobile-7{ width: 58%; display: inline-block; }
+	.mobile-8{ width: 66%; display: inline-block; }
+	.mobile-9{ width: 75%; display: inline-block; }
+	.mobile-10{ width: 83%; display: inline-block; }
+	.mobile-11{ width: 91%; display: inline-block; }
+	.mobile-12, .mobile-extralarge{ width: 100%; display: inline-block; }
+}
+
+/* Tablets ------------------------------------------ */
+@media only screen and (min-width : 480px) and (max-width : 800px) {
+	.tablet-0, .tablet-none{ display: none; display: inline-block; }
+	.tablet-1, .tablet-small{ width: 8%; display: inline-block; }
+	.tablet-2{ width: 16%; display: inline-block; }
+	.tablet-3, .tablet-medium{ width: 25%; display: inline-block; }
+	.tablet-4{ width: 32%; display: inline-block; }
+	.tablet-5{ width: 41%; display: inline-block; }
+	.tablet-6, .tablet-large{ width: 50%; display: inline-block; }
+	.tablet-7{ width: 58%; display: inline-block; }
+	.tablet-8{ width: 66%; display: inline-block; }
+	.tablet-9{ width: 75%; display: inline-block; }
+	.tablet-10{ width: 83%; display: inline-block; }
+	.tablet-11{ width: 91%; display: inline-block; }
+	.tablet-12, .tablet-extralarge{ width: 100%; display: inline-block; }
+}
+
+/* Laptops ---------------------------------------- */
+@media only screen and (min-width : 801px) and (max-width : 1280px) {
+	.laptop-0, .laptop-none{ display: none; display: inline-block; }
+	.laptop-1, .laptop-small{ width: 8%; display: inline-block; }
+	.laptop-2{ width: 16%; display: inline-block; }
+	.laptop-3, .laptop-medium{ width: 25%; display: inline-block; }
+	.laptop-4{ width: 32%; display: inline-block; }
+	.laptop-5{ width: 41%; display: inline-block; }
+	.laptop-6, .laptop-large{ width: 50%; display: inline-block; }
+	.laptop-7{ width: 58%; display: inline-block; }
+	.laptop-8{ width: 66%; display: inline-block; }
+	.laptop-9{ width: 75%; display: inline-block; }
+	.laptop-10{ width: 83%; display: inline-block; }
+	.laptop-11{ width: 91%; display: inline-block; }
+	.laptop-12, .laptop-extralarge{ width: 100%; display: inline-block; }
+}
+
+/* Desktops ---------------------------------------- */
+@media only screen and (min-width : 1281px){
+	.desktop-0, .desktop-none{ display: none; display: inline-block; }
+	.desktop-1, .desktop-small{ width: 8%; display: inline-block; }
+	.desktop-2{ width: 16%; display: inline-block; }
+	.desktop-3, .desktop-medium{ width: 25%; display: inline-block; }
+	.desktop-4{ width: 32%; display: inline-block; }
+	.desktop-5{ width: 41%; display: inline-block; }
+	.desktop-6, .desktop-large{ width: 50%; display: inline-block; }
+	.desktop-7{ width: 58%; display: inline-block; }
+	.desktop-8{ width: 66%; display: inline-block; }
+	.desktop-9{ width: 75%; display: inline-block; }
+	.desktop-10{ width: 83%; display: inline-block; }
+	.desktop-11{ width: 91%; display: inline-block; }
+	.desktop-12, .desktop-extralarge{ width: 100%; display: inline-block; }
+}

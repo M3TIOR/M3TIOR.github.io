@@ -15,16 +15,18 @@
  *     link-img -- link image optimization
  */
 
-
-/* Main theme initiator before javascript */
-[data-color-main]{background-color:#0F0F0F; color:#F0F0F0; border-color: #AAAAAA;}
-[data-color-highlight]{background-color:#000031; color:#FF4444; border-color: #FF0000;}
-
-/* Removes html-only text upon css load;*/
-/* As described above, removes text when css is loaded "I hope"*/
-.bone{display: none;}
+*{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	 --color-primary: #360034;
+	 --color-primary-light: #460044;
+	 --color-primary-dark: #260024;
+	 --color-highlight: #E2D5E1;
+}
 
 /* ICONS */
+/*
 [longdesc=Github]{
     src: url(https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png);
     content: url(https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png);
@@ -45,32 +47,22 @@
     src: url(https://st.deviantart.net/minish/main/logo/logo-mark.png);
     content: url(https://st.deviantart.net/minish/main/logo/logo-mark.png);
 }
+*/
 
 /*-------------------- PAGE SKIN ------------------------*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/* Art Panel */
-#ArtPanel{
 
+/*=== CSS3 TAGS ===*/
+body{
+	padding: 0px;
+	margin: 0px;
+	background-color: var(--color-primary-dark);
+	color: var(--color-highlight);
 }
 
-/* About */
-#About{
-    padding:5px;
+p{
+	vertical-align: top;
 }
 
-#links{
-    list-style-type:none;
-}
-#link-btn{
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    margin: 0px;
-    padding: 25%;
-}:hover{}
-#link-img{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
+/*=== PAGE SPECIFIC ===*/

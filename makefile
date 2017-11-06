@@ -1,5 +1,5 @@
 
-.PHONY: build deploy
+.PHONY: build deploy clean
 
 build:
 	@echo "Building..."

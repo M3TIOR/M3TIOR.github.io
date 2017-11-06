@@ -1,13 +1,27 @@
 /* Page js(POWER) handle */
 /* Ensures the page is html-only when off. */
-body.off,.off *{
-    all: default !important;
-    all: initial !important;
-    position: unset !important;
+*.off, .off < *{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	 --color-primary: #FFF;
+	 --color-secondary: #000;
+	 --color-highlight: #000;
 
-    content:none !important;
+	 all: default !important;
+     all: initial !important;
+     position: unset !important;
+
+     content:none !important;
+	 color: inherit;
+	 background-color: inherit;
 }
-.off img{display:none;}
-.off [data-color-main],.off [data-color-highlight]{
-    color: black; background-color: white;
+
+body.off{
+	color: var(--color-primary, #FFF);
+	background-color: var(--color-highlight, #000);
 }
+
+/* Removes html-only text upon css load;*/
+/* As described above, removes text when css is loaded "I hope"*/
+.bone{display: none;}
