@@ -1,6 +1,6 @@
 /* Page js(POWER) handle */
 /* Ensures the page is html-only when off. */
-*.off, .off < *{
+*.off, .off *{
 	/*
 	 * Global Variable / Value Descriptor Location
 	 */
@@ -24,4 +24,4 @@ body.off{
 
 /* Removes html-only text upon css load;*/
 /* As described above, removes text when css is loaded "I hope"*/
-.bone{display: none;}
+*.bone{display: none !important;}

@@ -1,0 +1,13 @@
+/*
+ * M3TIOR 2017
+ */
+
+*{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	 --color-primary: #360034;
+	 --color-primary-light: #460044;
+	 --color-primary-dark: #260024;
+	 --color-highlight: #E2D5E1;
+}

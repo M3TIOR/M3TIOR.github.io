@@ -20,26 +20,30 @@
 		<meta name="keywords" content="Developer, Person, People">
 		<meta name="author" content="M3TIOR">
 		<link id="@LOGO" type="image/png" rel="favicon" href="favicon.png">
+		<link id="@COLORS" type="text/css" rel="stylesheet" href="color.css" />
 		<link id="@SKIN" type="text/css" rel="stylesheet" href="index.css" />
 		<link id="@RESPONSIVE" type="text/css" rel="stylesheet" href="responsive.css" />
-		<link id="@POWER" type="text/css" rel="stylesheet" href="power.css" />
 		<link id="@NAVIGATION" type="text/css" rel="stylesheet" href="navbar.css" />
+		<link id="@POWER" type="text/css" rel="stylesheet" href="power.css" />
 		<!--<script id="@EMCAScript" type="text/javascript" async src="index.js" />-->
 	</head>
 	<body onload="MUSCLE.load">
 		<div id="@DEATH" onkeyup="MUSCLE.kill()" accesskey="d" accesskey="i" accesskey="e"></div>
 		<!-- Background Panels -->
+
 		<!-- Navbar insert  (Go tah hell Austin... mer... :P )-->
+		<input class="bone" type="checkbox" id="navbarCTRL"><!-- These Stack-->
 		<div id="navigation">
-			<button>
-				<span class="bone">Toggle Control Panel</span>
+			<label for="navbarCTRL">
+				<span class="bone">Toggle Controls</span>
 				<img></img>
-			</button>
+			</label>
 			<ul>
 				<li><a href="">Home</a></li>
 				<li><a href="">Feed</a></li>
 				<li><a href="">Contact</a></li>
 			</ul>
+			<div id="muscles"></div>
 		</div>
 		<div id="main">
 			<div id="social-pane">
