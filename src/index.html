@@ -28,9 +28,7 @@
 		<!--<script id="@EMCAScript" type="text/javascript" async src="index.js" />-->
 	</head>
 	<body onload="MUSCLE.load">
-		<div id="@DEATH" onkeyup="MUSCLE.kill()" accesskey="d" accesskey="i" accesskey="e"></div>
-		<!-- Background Panels -->
-
+		<input style="display: none;" type="checkbox" id="contactCTRL"><!-- These Stack-->
 		<!-- Navbar insert  (Go tah hell Austin... mer... :P )-->
 		<input class="bone" type="checkbox" id="navbarCTRL"><!-- These Stack-->
 		<div id="navigation">
@@ -38,12 +36,30 @@
 				<span class="bone">Toggle Controls</span>
 				<img></img>
 			</label>
-			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">Feed</a></li>
-				<li><a href="">Contact</a></li>
-			</ul>
-			<div id="muscles"></div>
+			<div id="navigation-content">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Feed</a></li>
+					<li><label for="contactCTRL">Contact</label></li>
+				</ul>
+				<div id="muscles"><!-- javascript buttons go here --></div>
+				<div id="copyright">
+					&copy<span>Ruby Allison Rose</span>
+				</div>
+			</div>
+		</div>
+		<div id="contact">
+			<div>
+				<label style="display: none;">
+					<svg>
+					</svg>
+				<label>
+				<address>
+					<span class="bone">Contact me at:</span>
+					<a href="mailto:cplusplusook32@gmail.com">cplusplusook@gmail.com</a>
+					<a href="tel:3606905625">360-690-5625</a>
+				</address>
+			</div>
 		</div>
 		<div id="content">
 			<div class="color-primary-light full">
@@ -61,7 +77,7 @@
 					<ul>
 						<li>
 							<a href="https://www.github.com/M3TIOR">
-								<img style="display:none;" longdesc="Github"></img>
+								<img longdesc="Github"></img>
 							</a>
 							<div class="bone">
 								<span>
@@ -75,23 +91,23 @@
 							</div>
 						</li>
 						<li>
-							<a href="https://www.gitbook.com/M3TIOR">
-								<img style="display:none;" longdesc="Gitbook"></img>
+							<a href="">
+								<img longdesc="Linkedin"></img>
 							</a>
 							<div class="bone">
 								<span>
-									<b>Gitbook : </b>
+									<b>Linkedin : </b>
 								</span>
 								<span>
-									<a href="https://www.gitbook.com/M3TIOR">
-										https://www.gitbook.com/M3TIOR
+									<a href="">
+
 									</a>
 								</span>
 							</div>
 						</li>
 						<li>
 							<a href="https://www.youtube.com/channel/UChyesz_3CwKm5EMa_fPpwgQ">
-								<img style="display:none;" longdesc="Youtube"></img>
+								<img longdesc="Youtube"></img>
 							</a>
 							<div class="bone">
 								<span>
@@ -106,7 +122,7 @@
 						</li>
 						<li>
 							<a href="https://m3tior.deviantart.com/">
-								<img style="display:none;" longdesc="DeviantArt"></img>
+								<img longdesc="DeviantArt"></img>
 							</a>
 							<div class="bone">
 								<span>
@@ -121,7 +137,7 @@
 						</li>
 						<li>
 							<a href="https://soundcloud.com/null-undefined">
-								<img style="display:none;" longdesc="Soundcloud"></img>
+								<img longdesc="Soundcloud"></img>
 							</a>
 							<div class="bone">
 								<span>
@@ -167,7 +183,7 @@
 						</p>
 					</div>
 					<div class="subject color-primary-darker">
-						<h3>W3C / The Web Stack</h3>
+						<h3>W3C</h3>
 						<p>
 							I've been working with web technologies for about five years now. I'm up to date
 							on all the latest web technologies and trends because I have a genuine interest in them.
@@ -177,7 +193,7 @@
 						</p>
 					</div>
 					<div class="subject color-primary-darker">
-						<h3>Native Development</h3>
+						<h3>Native</h3>
 						<p>
 							I have five-plus years of experience using C, one year of experience using C++,
 							and experience using Assembly from my shenanigans trying to make my own kernel.

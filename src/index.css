@@ -4,28 +4,33 @@
 
 
 /* ICONS */
-/*
 [longdesc=Github]{
-    src: url(https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png);
-    content: url(https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png);
+    src: url(icons/iconmonstr-github-1.svg);
+    content: url(icons/iconmonstr-github-1.svg);
 }
+/*
 [longdesc=Gitbook]{
     src: url(https://avatars2.githubusercontent.com/u/7111340?v=3&s=400);
     content: url(https://avatars2.githubusercontent.com/u/7111340?v=3&s=400);
 }
+*/
+[longdesc=Linkedin]{
+    src: url(icons/iconmonstr-linkedin-4.svg);
+    content: url(icons/iconmonstr-linkedin-4.svg);
+}
 [longdesc=Youtube]{
-    src: url(https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png);
-    content: url(https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png);
+    src: url(icons/iconmonstr-youtube-4.svg);
+    content: url(icons/iconmonstr-youtube-4.svg);
 }
 [longdesc=Soundcloud]{
-    src: url(https://w.soundcloud.com/icon/?color=orange_transparent&size=64);
-    content: url(https://w.soundcloud.com/icon/?color=orange_transparent&size=64);
+    src: url(icons/iconmonstr-soundcloud-4.svg);
+    content: url(icons/iconmonstr-soundcloud-4.svg);
 }
 [longdesc=DeviantArt]{
-    src: url(https://st.deviantart.net/minish/main/logo/logo-mark.png);
-    content: url(https://st.deviantart.net/minish/main/logo/logo-mark.png);
+    src: url(icons/iconmonstr-deviantart-4.svg);
+    content: url(icons/iconmonstr-deviantart-4.svg);
 }
-*/
+
 
 *{
 	/*
@@ -70,9 +75,14 @@ p{
 	margin-bottom: 10px;
 }
 
+#social{
+	overflow-x: scroll;
+}
 #social *{
 	padding:0px;
 	margin:0px;
+	width: 100%;
+	height: 100%;
 }
 #social ul{
 	height: calc(var(--social-pane-size-y) * 1px);
@@ -100,10 +110,41 @@ p{
 	width: calc(var(--social-btn-size) * 1px);
 	height: calc(var(--social-btn-size) * 1px);
 }
+#social ::-webkit-scrollbar-thumb{
+	background-color: var(--color-primary-light);
+}
+#social ::-webkit-scrollbar{
+	background-color: var(--color-primary-darker);
+}
+
+
+#contact{
+	display: none;
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+#contact div{
+	width: 200px;
+	height: 100px;
+	margin: auto;
+}
+#contact label{
+
+}
+#contact address{
+
+}
+#contact a{
+
+}
+#contactCTRL:checked #contact{
+	display: block;
+}
 
 
 .subject{
-	flex: 0 0 calc(var(--subject-size) * 1%);
 	padding: calc(var(--subject-padding-size) * 1%) !important;
 	margin-bottom: 0px;
 	margin: calc(var(--subject-gutter-size) * 1%);
@@ -135,4 +176,17 @@ p{
 .center{
 	display: block !important;
 	margin: auto !important;
+}
+
+
+@media only screen and (max-width : 480px) {
+	.subject{
+		flex: -1 0 calc(var(--subject-size) * 1%);
+	}
+}
+
+@media only screen and (min-width : 481px){
+	.subject{
+		flex: 0 0 calc(var(--subject-size) * 1%);
+	}
 }

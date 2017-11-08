@@ -9,7 +9,7 @@
 	 --color-highlight: #000;
 
 	 all: default !important;
-     all: initial !important;
+	 all: initial !important;
      position: unset !important;
 
      content:none !important;
