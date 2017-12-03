@@ -1,5 +1,5 @@
 
-.PHONY: build deploy clean
+.PHONY: build deploy fix-deploy clean
 
 build:
 	@echo "Building..."
@@ -8,11 +8,16 @@ build:
 	@rsync -vr res/* BUILD
 	@echo "Done!"
 
-#deploy: clean build
-#	@echo "Uploading to github..."
-#	@git subtree split --prefix BUILD -b master
-#	@git push -f origin master:master
-#	@echo "Done!"
+deploy: clean build
+	@echo "Uploading to github..."
+	@git subtree push --prefix BUILD -b master
+	@echo "Done!"
+
+fix-deploy:
+	@echo "Refreshing Github..."
+	@git commit --allow-empty -m "Trigger rebuild" master
+	@git push master origin:master
+	@echo "Done!"
 
 # Shouldn't need to use this any more
 # since I have a gitignore to keep that directory
