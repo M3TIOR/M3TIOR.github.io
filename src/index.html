@@ -22,15 +22,15 @@
 		<link id="@LOGO" type="image/png" rel="favicon" href="favicon.png">
 		<link id="@COLORS" type="text/css" rel="stylesheet" href="color.css" />
 		<link id="@SKIN" type="text/css" rel="stylesheet" href="index.css" />
-		<link id="@RESPONSIVE" type="text/css" rel="stylesheet" href="responsive.css" />
+		<link id="@CONTACT" type="text/css" rel="stylesheet" href="contact.css" />
 		<link id="@NAVIGATION" type="text/css" rel="stylesheet" href="navbar.css" />
 		<link id="@POWER" type="text/css" rel="stylesheet" href="power.css" />
-		<!--<script id="@EMCAScript" type="text/javascript" async src="index.js" />-->
+		<!--<script id="@MUSCLE" type="text/javascript" async src="muscle.js" />-->
 	</head>
 	<body onload="MUSCLE.load">
 		<input style="display: none;" type="checkbox" id="contactCTRL"><!-- These Stack-->
-		<!-- Navbar insert  (Go tah hell Austin... mer... :P )-->
 		<input class="bone" type="checkbox" id="navbarCTRL"><!-- These Stack-->
+		<!-- Navbar insert  (Go tah hell Austin... mer... :P )-->
 		<div id="navigation">
 			<label for="navbarCTRL">
 				<span class="bone">Toggle Controls</span>
@@ -50,11 +50,14 @@
 		</div>
 		<div id="contact">
 			<div>
-				<label style="display: none;">
-					<svg>
+				<label for="contactCTRL">
+					<svg viewBox="1,0,21,21">
+						<rect y="10" width="25" height="5" transform="rotate(-45) translate(-12,3)"/>
+						<rect x="10" width="5" height="25" transform="rotate(135) translate(-13,-28)"/>
 					</svg>
-				<label>
+				</label>
 				<address>
+					<h1 style="display: none;" class="css-only">Ruby Allison Rose</h1>
 					<span class="bone">Contact me at:</span>
 					<a href="mailto:cplusplusook32@gmail.com">cplusplusook@gmail.com</a>
 					<a href="tel:3606905625">360-690-5625</a>
@@ -91,7 +94,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="">
+							<a href="linkedin.com/in/ruby-rose-489464151/">
 								<img longdesc="Linkedin"></img>
 							</a>
 							<div class="bone">
@@ -99,8 +102,8 @@
 									<b>Linkedin : </b>
 								</span>
 								<span>
-									<a href="">
-
+									<a href="linkedin.com/in/ruby-rose-489464151/">
+										linkedin.com/in/ruby-rose-489464151/
 									</a>
 								</span>
 							</div>
@@ -177,7 +180,7 @@
 						<h3>Linux</h3>
 						<p>
 							I've been working on Linux platforms since my first year of robotics
-							when my old friend <a href="apachano.github.io">Austin</a> introduced me to them.
+							when my old friend <a href="https://apachano.github.io">Austin</a> introduced me to them.
 							I've done networking, administration, and embeded developement using it.
 							To this date linux mint is only operating system I use every day.
 						</p>

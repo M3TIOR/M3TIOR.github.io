@@ -3,6 +3,28 @@
  */
 
 
+*{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	--social-btn-size: 100;
+	--social-btn-count: 5;
+	--social-btn-perline: 3;
+	--social-btn-separation: var(--social-btn-size);
+	--social-btn-x-separation: calc(var(--social-btn-size) * 1);
+	--social-btn-y-separation: calc(var(--social-btn-size) * 1);
+	--social-pane-size-y: calc(var(--social-btn-size) * 2);
+	--social-pane-size-x: 450;
+
+	--subject-gutter-size: 2.5;
+	--subject-padding-size: var(--subject-gutter-size);
+	--subject-size: calc( 50 - calc(var(--subject-padding-size) + var(--subject-gutter-size)));
+	--subject-perline: 1;
+
+	/*--- GLOBAL FIXES ---*/
+	-webkit-padding-start: 0px;
+}
+
 /* ICONS */
 [longdesc=Github]{
     src: url(icons/iconmonstr-github-1.svg);
@@ -29,29 +51,6 @@
 [longdesc=DeviantArt]{
     src: url(icons/iconmonstr-deviantart-4.svg);
     content: url(icons/iconmonstr-deviantart-4.svg);
-}
-
-
-*{
-	/*
-	 * Global Variable / Value Descriptor Location
-	 */
-	--social-btn-size: 100;
-	--social-btn-count: 5;
-	--social-btn-perline: 3;
-	--social-btn-separation: var(--social-btn-size);
-	--social-btn-x-separation: calc(var(--social-btn-size) * 1);
-	--social-btn-y-separation: calc(var(--social-btn-size) * 1);
-	--social-pane-size-y: calc(var(--social-btn-size) * 2);
-	--social-pane-size-x: 450;
-
-	--subject-gutter-size: 2.5;
-	--subject-padding-size: var(--subject-gutter-size);
-	--subject-size: calc( 50 - calc(var(--subject-padding-size) + var(--subject-gutter-size)));
-	--subject-perline: 1;
-
-	/*--- GLOBAL FIXES ---*/
-	-webkit-padding-start: 0px;
 }
 
 body{
@@ -117,33 +116,6 @@ p{
 	background-color: var(--color-primary-darker);
 }
 
-
-#contact{
-	display: none;
-	position: fixed;
-	z-index: 2;
-	width: 100%;
-	height: 100%;
-}
-#contact div{
-	width: 200px;
-	height: 100px;
-	margin: auto;
-}
-#contact label{
-
-}
-#contact address{
-
-}
-#contact a{
-
-}
-#contactCTRL:checked #contact{
-	display: block;
-}
-
-
 .subject{
 	padding: calc(var(--subject-padding-size) * 1%) !important;
 	margin-bottom: 0px;
@@ -158,7 +130,6 @@ p{
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 }
-
 .topic > h1, .topic > h2, .topic > h3{
 	flex: 1 0 50%;
 }
