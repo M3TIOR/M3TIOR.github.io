@@ -13,14 +13,14 @@ deploy: clean build
 	@cd BUILD;\
 		git add --all;\
 		git commit -m "Deploying New Version";\
-		git push;
+		git push origin master;
 	@echo "Done!"
 
 fix-deploy:
 	@echo "Refreshing Github..."
 	@cd BUILD;\
 		git commit --allow-empty -m "Trigger rebuild" master;\
-		git push;
+		git push origin master;
 	@echo "Done!"
 
 # Shouldn't need to use this any more
