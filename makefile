@@ -10,13 +10,15 @@ build:
 
 deploy: clean build
 	@echo "Uploading to github..."
-	@git subtree push --prefix BUILD -b master
+	@git subtree push --prefix BUILD origin master
 	@echo "Done!"
 
 fix-deploy:
 	@echo "Refreshing Github..."
-	@git commit --allow-empty -m "Trigger rebuild" master
-	@git push master origin:master
+	@git checkout master;\
+		git commit --allow-empty -m "Trigger rebuild";\
+		git push;\
+		git checkout development;
 	@echo "Done!"
 
 # Shouldn't need to use this any more
@@ -25,5 +27,5 @@ fix-deploy:
 # But just in case, I'm leaving it here.
 clean:
 	@echo "Cleaning..."
-	@rm -rf BUILD/*
+	@rm -rfv BUILD/*
 	@echo "Done!"
