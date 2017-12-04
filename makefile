@@ -11,16 +11,25 @@ build:
 deploy: clean build
 	@echo "Uploading to github..."
 	@cd BUILD;\
+		git subtree push --prefix=BUILD origin master;\
+		git checkout master;\
+		git pull;\
+		git mv ./BUILD/* ./;\
+		rmdir BUILD;\
 		git add --all;\
 		git commit -m "Deploying New Version";\
-		git push origin master;
+		git push;\
+		git checkout development;
 	@echo "Done!"
 
 fix-deploy:
 	@echo "Refreshing Github..."
 	@cd BUILD;\
+		git checkout master;\
+		git pull;\
 		git commit --allow-empty -m "Trigger rebuild" master;\
-		git push origin master;
+		git push;\
+		git checkout development;
 	@echo "Done!"
 
 # Shouldn't need to use this any more

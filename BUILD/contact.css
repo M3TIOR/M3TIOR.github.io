@@ -1,0 +1,120 @@
+/*
+ * M3TIOR 2017
+ */
+
+*{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	--contact-color-primary: var(--color-primary, #360034);
+	--contact-color-primary-light: var(--color-primary-light ,#460044);
+	--contact-color-primary-dark: var(--color-primary-dark, #260024);
+	--contact-color-primary-darker: var(--color-primary-darker, #160014);
+	--contact-color-primary-lighter: var(--color-primary-lighter, #560054);
+	--contact-color-highlight: var(--color-primary-highlight, #E2D5E1);
+}
+
+html{
+	min-width: 200px;
+	min-height: 200px;
+}
+
+/*----- Main Toggle Conditional ------*/
+#contactCTRL:checked ~ #contact{	/* Window */
+	display: block;
+} /* ELSE */
+	#contact{
+		display: none;
+}
+#contactCTRL:checked ~ #contact *{	/* Content */
+	display: block;
+} /* ELSE */
+	#contact *{
+		display: none;
+}
+/*--------------------------------*/
+
+#contact{
+	display: none;
+	position: fixed;
+	background-color: rgba(0,0,0,0.4);
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#contact *{
+	display: none;
+	color: var(--contact-color-highlight);
+	text-decoration: none;
+	text-align: center;
+	border-radius: 10px;
+}
+
+#contact h1{
+	font-size: 1.2em;
+}
+#contact > div{
+	--size: 200;
+	background-color: var(--contact-color-primary);
+	box-shadow: 0 0 10px #000;
+	border-radius: 10px;
+	position: relative;
+	width: calc(var(--size) * 1px);
+	height: calc(var(--size) * 1px);
+	top: calc(50% - calc(var(--size) * 0.5px));
+	left: calc(50% - calc(var(--size) * 0.5px));
+}
+#contact > div > label{
+	position: absolute;
+	right: 0px;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid var(--contact-color-primary-dark);
+}
+#contact > div > label:hover{
+	background-color: var(--contact-color-primary-dark);
+}
+#contact > div > label > *{
+	fill: var(--contact-color-primary-lighter)
+}
+#contact > div > address{
+	position: relative;
+	padding: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#contact > div > address > a:hover{
+	text-decoration: underline;
+}
+
+@media only screen and (max-width : 200px), screen and (max-height : 200px){
+	/*Just invert the button controls here*/
+	/*----- Main Toggle Conditional ------*/
+	#contactCTRL:checked ~ #contact{	/* Window */
+		display: none;
+	} /* ELSE */
+		#contact{
+			display: block;
+	}
+	#contactCTRL:checked ~ #contact *{	/* Content */
+		display: none;
+	} /* ELSE */
+		#contact *{
+			display: block;
+	}
+	/*--------------------------------*/
+
+	/*
+	 * Change the background color for the dimming pannel so it doesn't
+	 * look like crap if a user has a really short screen, or a really
+	 * thin screen...
+	 */
+
+	#contact{
+		background-color: var(--contact-color-primary);
+	}
+}
