@@ -10,9 +10,9 @@ build:
 
 deploy: clean build
 	@echo "Uploading to github..."
+	@git subtree push --prefix=BUILD origin master;\
+	@git checkout master;\
 	@\
-		git subtree push --prefix=BUILD origin master;\
-		git checkout master;\
 		git pull;\
 		git mv ./BUILD/* ./;\
 		rmdir BUILD;\
