@@ -9,32 +9,22 @@ build:
 	@echo "Done!"
 
 deploy: clean build
-	@echo "Uploading to github..."
+	@echo "Uploading to github...";
+	@git push --delete origin master;
 	@git subtree push --prefix=BUILD origin master;
-	@git stash;
-	@git checkout master;
-	@\
-		git pull;\
-		git mv ./BUILD/* ./;\
-		rmdir BUILD;\
-		git add --all;\
-		git commit -m "Deploying New Version";\
-		git push;\
-		git checkout development;
-	@git stash pop;
 	@echo "Done!"
 
-fix-deploy:
-	@echo "Refreshing Github..."
-	@\
-		git stash;\
-		git checkout master;\
-		git pull;\
-		git commit --allow-empty -m "Trigger rebuild" master;\
-		git push;\
-		git checkout development;\
-		git stash pop;
-	@echo "Done!"
+#fix-deploy:
+#	@echo "Refreshing Github..."
+##	@\
+#		git stash;\
+#		git checkout master;\
+#		git pull;\
+#		git commit --allow-empty -m "Trigger rebuild" master;\
+#		git push;\
+#		git checkout development;\
+#		git stash pop;
+#	@echo "Done!"
 
 # Shouldn't need to use this any more
 # since I have a gitignore to keep that directory
