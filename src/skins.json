@@ -1,0 +1,57 @@
+[
+	{
+		"name": "Darklight",
+		"description": "Ashen, the sword of love and pain",
+		"boxcolor": "",
+		"colorPrimary": "",
+		"colorPrimaryLight": "",
+		"colorPrimaryLighter": "",
+		"colorPrimaryDark": "",
+		"colorPrimaryDarker": "",
+		"colorContrast" : ""
+	},
+	{
+		"name": "Ruby",
+		"description": "The result of harmony",
+		"boxcolor": "",
+		"colorPrimary": "",
+		"colorPrimaryLight": "",
+		"colorPrimaryLighter": "",
+		"colorPrimaryDark": "",
+		"colorPrimaryDarker": "",
+		"colorContrast" : ""
+	},
+	{
+		"name": "Allice",
+		"description": "The other half",
+		"boxcolor": "",
+		"colorPrimary": "",
+		"colorPrimaryLight": "",
+		"colorPrimaryLighter": "",
+		"colorPrimaryDark": "",
+		"colorPrimaryDarker": "",
+		"colorContrast" : ""
+	},
+	{
+		"name": "Onyx",
+		"description": "The Dark",
+		"boxcolor": "",
+		"colorPrimary": "",
+		"colorPrimaryLight": "",
+		"colorPrimaryLighter": "",
+		"colorPrimaryDark": "",
+		"colorPrimaryDarker": "",
+		"colorContrast" : ""
+	},
+	{
+		"name": "Love",
+		"description": "The Light",
+		"boxcolor": "",
+		"colorPrimary": "",
+		"colorPrimaryLight": "",
+		"colorPrimaryLighter": "",
+		"colorPrimaryDark": "",
+		"colorPrimaryDarker": "",
+		"colorContrast" : ""
+	}
+]
