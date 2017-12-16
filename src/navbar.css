@@ -182,6 +182,7 @@ html{
 		display: inline-block;
 	}
 	#navigation > #navigation-content{
+		pointer-events: none;
 		position: absolute;
 		width: 100%;
 	}
@@ -203,6 +204,8 @@ html{
 	#navigation #muscles{
 		position: absolute;
 		top: calc(var(--navbar-size) * 1px);
+		background-color: var(--color-primary));
+		height: calc(100% - var(--navbar-size));
 	}
 	#navigation #copyright{
 		float: right;
