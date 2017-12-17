@@ -13,8 +13,8 @@
  *	801px  <= Laptops      > 1280px
  *	1281px <= Desktops
  */
-
-*{
+ 
+html{
 	/*
 	 * Global Variable / Value Descriptor Location
 	 */
@@ -27,8 +27,7 @@
 	 *	Only doing this because I'm not sure if the behavior of the
 	 *	"em" type is constant among different browsers.
 	 */
-}
-html{
+
 	min-width: 200px;
 }
 
@@ -79,6 +78,7 @@ html{
 }
 #navigation #navigation-content > ul > li{
 	display: inline-block;
+	pointer-events: all;
 }
 #navigation #navigation-content > ul > li:hover{
 	text-decoration:underline;
@@ -89,6 +89,7 @@ html{
 	width: calc(100% - 20px); /*for the padding*/
 }
 #navbarCTRL:checked ~ #navigation #muscles{
+	pointer-events: all;
 	display: block;
 	z-index: 1;
 }
@@ -188,7 +189,7 @@ html{
 	}
 	#navigation > label{
 		position: absolute;
-		border-right: 1px solid #000;
+		border-right: 1px solid var(--color-primary-dark);
 		width: calc(var(--navbar-size) * 1px);
 	}
 	#navigation > label:hover{
@@ -204,12 +205,14 @@ html{
 	#navigation #muscles{
 		position: absolute;
 		top: calc(var(--navbar-size) * 1px);
-		background-color: var(--color-primary));
-		height: calc(100% - var(--navbar-size));
+		background-color: var(--color-primary);
+		border-top: 2px solid var(--color-primary-dark);
+		box-shadow: 0px 1px 20px #000;
 	}
 	#navigation #copyright{
 		float: right;
 		padding: calc(var(--navbar-size) * 0.25px);
+		pointer-events: all;
 	}
 	#navigation #copyright span{
 		position:absolute;

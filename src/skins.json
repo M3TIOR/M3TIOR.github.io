@@ -1,8 +1,17 @@
 [
 	{
 		"name": "Darklight",
-		"description": "Ashen, the sword of love and pain",
-		"boxcolor": "",
+		"description": "Kinship",
+		"colorPrimary": "#360034",
+		"colorPrimaryLight": "#460044",
+		"colorPrimaryLighter": "#560054",
+		"colorPrimaryDark": "#260024",
+		"colorPrimaryDarker": "#160014",
+		"colorContrast" : "#E2D5E1"
+	},
+	{
+		"name": "Ashen",
+		"description": "An Ashen Soul, the sword of love and pain",
 		"colorPrimary": "",
 		"colorPrimaryLight": "",
 		"colorPrimaryLighter": "",
@@ -13,7 +22,6 @@
 	{
 		"name": "Ruby",
 		"description": "The result of harmony",
-		"boxcolor": "",
 		"colorPrimary": "",
 		"colorPrimaryLight": "",
 		"colorPrimaryLighter": "",
@@ -24,7 +32,6 @@
 	{
 		"name": "Allice",
 		"description": "The other half",
-		"boxcolor": "",
 		"colorPrimary": "",
 		"colorPrimaryLight": "",
 		"colorPrimaryLighter": "",
@@ -34,8 +41,7 @@
 	},
 	{
 		"name": "Onyx",
-		"description": "The Dark",
-		"boxcolor": "",
+		"description": "The Dark, The Original, The Burdened",
 		"colorPrimary": "",
 		"colorPrimaryLight": "",
 		"colorPrimaryLighter": "",
@@ -44,9 +50,18 @@
 		"colorContrast" : ""
 	},
 	{
-		"name": "Love",
-		"description": "The Light",
-		"boxcolor": "",
+		"name": "Nitsua",
+		"description": "The Light, The Friend, The Gifted",
+		"colorPrimary": "",
+		"colorPrimaryLight": "",
+		"colorPrimaryLighter": "",
+		"colorPrimaryDark": "",
+		"colorPrimaryDarker": "",
+		"colorContrast" : ""
+	},
+	{
+		"name": "Dragon",
+		"description": "Requiem of love",
 		"colorPrimary": "",
 		"colorPrimaryLight": "",
 		"colorPrimaryLighter": "",
