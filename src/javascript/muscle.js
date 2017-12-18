@@ -134,29 +134,39 @@ var MUSCLE = null;
 
 	MUSCLE = {
 		bone: new savedValue("bone", true),
-		skin: new savedValue("skin", true),
+		derma: new savedValue("derma", true),
 		muscle: new savedValue("muscle", true),
-		schema: new savedValue("schema", 0),
+		skin: new savedValue("skin", 0),
+		custom: new savedValue("custom_schema", {
+			colorPrimary: "#FFFFFF",
+			colorPrimaryDark: "#FFFFFF",
+			colorPrimaryLight: "#FFFFFF",
+			colorPrimaryLighter: "#FFFFFF",
+			colorPrimaryDarker: "#FFFFFF"
+		}),
 
 		init: async function(){
 			dashboard = document.getElementById("muscles");
 			dashboard.innerHTML = `
-				<div id="schema"><!-- Color Schema -->
+				<div id="skins"><!-- Color Schema -->
 					<div><!--skins.json-->
 						`+(function(){
 							html = "";
 							for (var l=0; l < SKINS.length; l++){
-								html += `
-								<button title=\"`.trim()+`
-									`+SKINS[l].description+`
-								\"`.trim()+` style=\"`.trim()+`
-										height:30px;`.trim()+`
-										width:30px;`.trim()+`
-										font-size:0px;`.trim()+`
-										background-color:`.trim()+SKINS[l].colorPrimary+`;
-										border: 2px solid `.trim()+SKINS[l].colorPrimaryDark+`;
-									\"`.trim()+`
-								>`+SKINS[l].name+`</button>`;
+								html +=
+								`<button `+
+									`title=\"`+SKINS[l].description+`\" `+
+									`style=\"`+
+										`height:30px;`+
+										`width:30px;`+
+										`font-size:0px;`+
+										`background-color:`+SKINS[l].colorPrimary+`;`+
+										`border: 2px solid `+SKINS[l].colorPrimaryDark+`;`+
+									`\" `+
+									`onclick=\"MUSCLE.schema.value=`+l+`\" `+
+								`>`+
+									SKINS[l].name+
+								`</button>`;
 							}
 							return html;
 						})()+`
@@ -168,11 +178,45 @@ var MUSCLE = null;
 				</div>
 			`;
 			/*----------------------------------------------------------------*/
-			this.schema.onchange(function(new_value){
-				
+			this.skin.onchange(function(index){
+				//   html.style.setProperty(...)
+				if(index < 0){
+					// Custom Skin
+					document.all[0].style.setProperty('--color-primary', SKINS[index].colorPrimary);
+					document.all[0].style.setProperty('--color-primary-dark', SKINS[index].colorPrimaryDark);
+					document.all[0].style.setProperty('--color-primary-darker', SKINS[index].colorPrimaryDarker);
+					document.all[0].style.setProperty('--color-primary-light', SKINS[index].colorPrimaryLight);
+					document.all[0].style.setProperty('--color-primary-lighter', SKINS[index].colorPrimaryLighter);
+					document.all[0].style.setProperty('--color-highlight', SKINS[index].colorContrast);
+					return;
+				}else{
+					document.all[0].style.setProperty('--color-primary', SKINS[index].colorPrimary);
+					document.all[0].style.setProperty('--color-primary-dark', SKINS[index].colorPrimaryDark);
+					document.all[0].style.setProperty('--color-primary-darker', SKINS[index].colorPrimaryDarker);
+					document.all[0].style.setProperty('--color-primary-light', SKINS[index].colorPrimaryLight);
+					document.all[0].style.setProperty('--color-primary-lighter', SKINS[index].colorPrimaryLighter);
+					document.all[0].style.setProperty('--color-highlight', SKINS[index].colorContrast);
+				}
+				if(SKINS[index].name == "Ashen"){
+				 	glowElements= document.querySelectorAll("[data-glow]");
+
+					document.all[0].style.animation="darkbluered 1.5s infinite alternate";
+				}else{
+					document.all[0].style.animation="none";
+				}
 			});
+
+			/*
+			 * re-executes our onchange functions onload instead of making
+			 * the values of the page load as what they were when the user set them.
+			 * (Less programming I have to do...)
+			 */
+			this.bone.value = this.bone.value;
+			this.skin.value = this.skin.value;
+			this.muscle.value = this.muscle.value;
+			this.schema.value = this.schema.value;
 		},
 
-		end:0 // end of PAGE syntax easy because js is evil
+		end:0 // end of STRUCTbecause js is evil
 	};
 })();

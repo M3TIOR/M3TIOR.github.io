@@ -4,7 +4,10 @@
 build:
 	@echo "Building..."
 	@mkdir -p BUILD
-	@rsync -vr src/* BUILD
+	@rsync -vr src/css/* BUILD
+	@rsync -vr src/html/* BUILD
+	@rsync -vr src/javascript/* BUILD
+	@rsync -vr src/json/* BUILD
 	@rsync -vr res/* BUILD
 	@echo "Done!"
 

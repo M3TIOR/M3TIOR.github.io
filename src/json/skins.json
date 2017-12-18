@@ -12,12 +12,12 @@
 	{
 		"name": "Ashen",
 		"description": "An Ashen Soul, the sword of love and pain",
-		"colorPrimary": "",
-		"colorPrimaryLight": "",
-		"colorPrimaryLighter": "",
-		"colorPrimaryDark": "",
-		"colorPrimaryDarker": "",
-		"colorContrast" : ""
+		"colorPrimary": "#252525",
+		"colorPrimaryLight": "#313131",
+		"colorPrimaryLighter": "#414141",
+		"colorPrimaryDark": "#111",
+		"colorPrimaryDarker": "#0A0A0A",
+		"colorContrast" : "#FFF"
 	},
 	{
 		"name": "Ruby",
