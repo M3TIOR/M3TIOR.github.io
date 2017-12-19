@@ -8,6 +8,7 @@ build:
 	@rsync -vr src/html/* BUILD
 	@rsync -vr src/javascript/* BUILD
 	@rsync -vr src/json/* BUILD
+	@rsync -vr src/svg/* BUILD
 	@rsync -vr res/* BUILD
 	@echo "Done!"
 

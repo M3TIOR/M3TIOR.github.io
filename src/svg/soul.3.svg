@@ -1,0 +1,64 @@
+<svg viewBox="0 0 1000 1000" style="background-color:#111" xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:cc="http://web.resource.org/cc/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:svg="http://www.w3.org/2000/svg"
+xmlns="http://www.w3.org/2000/svg">
+<metadata>
+  <rdf:RDF>
+	<cc:Work>
+	  <dc:format>image/svg+xml</dc:format>
+	</cc:Work>
+  </rdf:RDF>
+</metadata>
+	<style>
+		#main *{
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-name: glow;
+			animation-timing-function: linear;
+			stroke-width: 5;
+			fill: none;
+		}
+
+		@keyframes glow {
+			0%{
+				stroke: #0000FF;
+				transform: rotate(0deg) translate(-50%,-50%);
+			}
+			50%{
+				stroke: #000000;
+			}
+			100%{
+				stroke: #FF0000;
+				transform: rotate(359deg) translate(-50%,-50%);
+			}
+		}
+	</style>
+	<defs>
+		<linearGradient id="red">
+			<stop offset="0" stop-color="transparent"/>
+			<stop offset="1" stop-color="red"/>
+		</linearGradient>
+		<g id="thing">
+			<rect width="100" height="100" fill="blue"/>
+		</g>
+	</defs>
+	<g id="main" transform="translate(500,500)">
+		<rect width="0" height="0" style="animation-duration:2.000000s"/>
+<rect width="50" height="50" style="animation-duration:2.250000s"/>
+<rect width="100" height="100" style="animation-duration:2.500000s"/>
+<rect width="150" height="150" style="animation-duration:2.750000s"/>
+<rect width="200" height="200" style="animation-duration:3.000000s"/>
+<rect width="250" height="250" style="animation-duration:3.250000s"/>
+<rect width="300" height="300" style="animation-duration:3.500000s"/>
+<rect width="350" height="350" style="animation-duration:3.750000s"/>
+<rect width="400" height="400" style="animation-duration:4.000000s"/>
+<rect width="450" height="450" style="animation-duration:4.250000s"/>
+<rect width="500" height="500" style="animation-duration:4.500000s"/>
+<rect width="550" height="550" style="animation-duration:4.750000s"/>
+<rect width="600" height="600" style="animation-duration:5.000000s"/>
+<rect width="650" height="650" style="animation-duration:5.250000s"/>
+<rect width="700" height="700" style="animation-duration:5.500000s"/>
+
+	</g>
+</svg>

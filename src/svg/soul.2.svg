@@ -1,0 +1,82 @@
+<svg
+	viewBox="0 0 1000 1000"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:cc="http://web.resource.org/cc/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg">
+	<metadata>
+	  <rdf:RDF>
+		<cc:Work>
+		  <dc:format>image/svg+xml</dc:format>
+		</cc:Work>
+	  </rdf:RDF>
+	</metadata>
+	<style>
+		#main *{
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-name: rotate;
+			animation-timing-function: linear;
+			stroke-width: 5;
+			fill: none;
+			stroke: url(#color);
+		}
+
+		#colord{
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-duration: 15s;
+			animation-name: glow;
+			animation-timing-function: ease;
+
+		}
+
+		@keyframes glow {
+			0%{
+				stop-color: #0000FF;
+			}
+			50%{
+				stop-color: #000000;
+			}
+			100%{
+				stop-color: #FF0000;
+			}
+		}
+
+		@keyframes rotate {
+			0%{
+				transform: rotate(0deg) translate(-50%,-50%);
+			}
+			100%{
+				transform: rotate(359deg) translate(-50%,-50%);
+			}
+		}
+	</style>
+	<defs>
+		<linearGradient id="color">
+			<stop id="colord" offset="0" stop-color="#000000"/>
+		</linearGradient>
+		<g id="thing">
+			<rect width="100" height="100" fill="blue"/>
+		</g>
+	</defs>
+	<g id="main" transform="translate(500,500)">
+		<rect width="50" height="50" style="animation-duration:110.000000s"/>
+<rect width="100" height="100" style="animation-duration:60.000000s"/>
+<rect width="150" height="150" style="animation-duration:43.333333s"/>
+<rect width="200" height="200" style="animation-duration:35.000000s"/>
+<rect width="250" height="250" style="animation-duration:30.000000s"/>
+<rect width="300" height="300" style="animation-duration:26.666667s"/>
+<rect width="350" height="350" style="animation-duration:24.285714s"/>
+<rect width="400" height="400" style="animation-duration:22.500000s"/>
+<rect width="450" height="450" style="animation-duration:21.111111s"/>
+<rect width="500" height="500" style="animation-duration:20.000000s"/>
+<rect width="550" height="550" style="animation-duration:19.090909s"/>
+<rect width="600" height="600" style="animation-duration:18.333333s"/>
+<rect width="650" height="650" style="animation-duration:17.692308s"/>
+<rect width="700" height="700" style="animation-duration:17.142857s"/>
+
+
+	</g>
+</svg>
