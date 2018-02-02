@@ -127,6 +127,7 @@ p{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-items: center;
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 }
@@ -149,15 +150,8 @@ p{
 	margin: auto !important;
 }
 
-
-@media only screen and (max-width : 480px) {
-	.subject{
-		flex: -1 0 calc(var(--subject-size) * 1%);
-	}
-}
-
 @media only screen and (min-width : 481px){
 	.subject{
-		flex: 0 0 calc(var(--subject-size) * 1%);
+		flex-basis: calc(var(--subject-size) * 1%);
 	}
 }

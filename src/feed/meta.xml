@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed>
+	<title>M3TIOR's Blog</title>
+	<link href="http://m3tior.github.io/"/>
+	<author>
+		<name>@M3TIOR</name>
+		<email>jtimmerman32@gmail.com</email>
+	</author>
+	<entry>
+		<title>Why I decided to stop using make... for the most part.</title>
+		<updated>2018-02-01T18:30:02Z</updated>
+		<summary>
+			It's a long story, the root of the problem
+			being an issue with modularity and portability.
+			For instance, whitespace characters cannot be escaped
+			in file names when including... Yea, it's that bad...
+		</summary>
+		<content type="xhtml" href="0.raw"></content>
+	</entry>
+</feed>

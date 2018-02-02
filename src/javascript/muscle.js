@@ -94,6 +94,28 @@ var savedValue = function(name, default_value){ // CONSTRUCTOR
 	}
 };
 
+function injectCSS(string){
+	function makeid(length) {
+		var text = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (var i = 0; i < length; i++)
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+		return text;
+	}
+
+	style = document.createElement("style");
+	id = "".concat("INJECTED.",makeid(12));
+
+	style.id=id;
+	style.type="text/css";
+	style.rel="stylesheet";
+	style.innerHTML=string;
+	document.head.appendChild(style);
+	return id;
+}
+
 
 /* OH BOY...
  *
@@ -110,18 +132,6 @@ var savedValue = function(name, default_value){ // CONSTRUCTOR
 var FILES = null;
 var SKINS = null;
 var MUSCLE = null;
-var SPECIALSKINS = [
-	{
-		name: "Ashen",
-		onchange: function(index){
-			social = document.getElementById("social");
-			social.style.backgroundImage="url(soul.2.svg)";
-			social.style.backgroundRepeat="no-repeat";
-			social.style.backgroundPosition="center";
-		},
-	}
-];
-
 (async function(){
 	/* BEGIN LOADING EXTERNAL FILES
 	 *
@@ -155,12 +165,16 @@ var SPECIALSKINS = [
 			colorPrimaryDark: "#FFFFFF",
 			colorPrimaryLight: "#FFFFFF",
 			colorPrimaryLighter: "#FFFFFF",
-			colorPrimaryDarker: "#FFFFFF"
+			colorPrimaryDarker: "#FFFFFF",
+			colorContrast: "#000000"
 		}),
 
 		init: async function(){
-			dashboard = document.getElementById("muscles");
-			dashboard.innerHTML = `
+			/*
+			 *	First thing, We're gonna do is populate the id=muscles
+			 *	panel with controlers for the website.
+			 */
+			document.getElementById("muscles").innerHTML = `
 				<div id="skins"><!-- Color Schema -->
 					<div><!--skins.json-->
 						`+(function(){
@@ -184,7 +198,7 @@ var SPECIALSKINS = [
 								 */
 								html += "".concat(
 									`<button `,
-										`title=\"`, SKINS[l].description, `\" `,
+										`title=\"`, SKINS[l].name, `\" `,
 										`style=\"`,
 											`height:30px;`,
 											`width:30px;`,
@@ -202,24 +216,41 @@ var SPECIALSKINS = [
 						})()+`
 					</div>
 					<div>
+						<form id="Custom_Skin">
+							<div id="Color-Chooser">
+								
+							<div>
+							<input placeholder="First Color" type="text"/>
+							<input placeholder="Second Color" type="text"/>
+							<input placeholder="Third Color" type="text"/>
+							<input placeholder="Fourth Color" type="text"/>
+							<input placeholder="Fifth Color" type="text"/>
+							<input placeholder="Contrast Color" type="text"/>
+						</form>
 					</div>
 				</div>
 				<div id="biology">
 				</div>
 			`;
-			/*----------------------------------------------------------------*/
+
+			/*
+			 * After adding the buttons into the document, We need to change
+			 * the document style when the buttons are clicked.
+			 */
 			this.skins.onchange(function(index){
 				//   html.style.setProperty(...)
 				if(index < 0){
 					// Custom Skin
-					document.all[0].style.setProperty('--color-primary', SKINS[index].colorPrimary);
-					document.all[0].style.setProperty('--color-primary-dark', SKINS[index].colorPrimaryDark);
-					document.all[0].style.setProperty('--color-primary-darker', SKINS[index].colorPrimaryDarker);
-					document.all[0].style.setProperty('--color-primary-light', SKINS[index].colorPrimaryLight);
-					document.all[0].style.setProperty('--color-primary-lighter', SKINS[index].colorPrimaryLighter);
-					document.all[0].style.setProperty('--color-highlight', SKINS[index].colorContrast);
+					document.body.dataset.skin="Custom";
+					document.all[0].style.setProperty('--color-primary', custom.value.colorPrimary);
+					document.all[0].style.setProperty('--color-primary-dark', custom.value.colorPrimaryDark);
+					document.all[0].style.setProperty('--color-primary-darker', custom.value.colorPrimaryDarker);
+					document.all[0].style.setProperty('--color-primary-light', custom.value.colorPrimaryLight);
+					document.all[0].style.setProperty('--color-primary-lighter', custom.value.colorPrimaryLighter);
+					document.all[0].style.setProperty('--color-highlight', custom.value.colorContrast);
 					return;
 				}else{
+					document.body.dataset.skin=SKINS[index].name; //leverage for injected CSS
 					document.all[0].style.setProperty('--color-primary', SKINS[index].colorPrimary);
 					document.all[0].style.setProperty('--color-primary-dark', SKINS[index].colorPrimaryDark);
 					document.all[0].style.setProperty('--color-primary-darker', SKINS[index].colorPrimaryDarker);
@@ -228,12 +259,46 @@ var SPECIALSKINS = [
 					document.all[0].style.setProperty('--color-highlight', SKINS[index].colorContrast);
 				}
 			});
-			if (SPECIALSKINS){
-				for (var l=0; l < SPECIALSKINS.length; l++){
-					this.skins.onchange(SPECIALSKINS[l].onchange);
-				}
-			}
 
+			injectCSS(`
+				/* Ashen's Soul */
+				[data-skin=\"Ashen\"] #social{
+					/* Put SVG Transmutation Circle Here */
+					/* background-image: url(); */
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center;
+				}
+				[data-skin=\"Ashen\"] #navigation *{
+					--animation-color-originem: var(--color-primary-dark);
+					--animation-color-mono: #311010;
+					--animation-color-bi: #101031;
+					animation: GLOWborder-color102 10s infinite ease;
+				}
+				[data-skin=\"Ashen\"] .topic{
+					--animation-color-originem: var(--color-primary-dark);
+					--animation-color-mono: #311010;
+					--animation-color-bi: #101031;
+					animation: GLOWborder-color102 10s infinite ease;
+					border: 2px solid;
+				}
+				[data-skin=\"Ashen\"] .subject{
+					--animation-color-originem: var(--color-primary-dark);
+					--animation-color-mono: #311010;
+					--animation-color-bi: #101031;
+					animation: GLOWborder-color102 10s infinite ease;
+					border: 2px solid;
+				}
+				@media only screen and (min-width : 481px){
+					.subject{
+						flex-basis: calc(calc(var(--subject-size) * 1%) - 4px);
+					}
+				}
+
+			`);
+
+
+			/*----------------------------------------------------------------*/
 			/*
 			 * re-executes our onchange functions onload instead of making
 			 * the values of the page load as what they were when the user set them.

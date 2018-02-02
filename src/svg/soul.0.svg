@@ -13,17 +13,36 @@ xmlns="http://www.w3.org/2000/svg">
 <style>
 		path{
 			fill: none;
-			stroke: url(#Gradient);
 			stroke-width: 5px;
+		}
+		.stuff{
+			animation: derp 5s infinite ease alternate;
+		}
+		@keyframes derp{
+			from{
+				opacity: 1;
+				//transform: translate(0%,-50%);
+			}
+			to{
+				opacity: 0;
+				//transform: translate(0, 50%);
+			}
 		}
 	</style>
 	<defs>
-		<linearGradient id="Gradient" fy="0.9">
+		<linearGradient id="Red">
 			<stop offset="0" stop-color="red"/>
 			<stop offset="0.5" stop-color="black" stop-opacity="0"/>
-			<stop offset="1" stop-color="blue"/>
-			<animate attributeName="fy" dur="700ms" from="0" to="0.9" repeatCount="indefinite" />
+			<stop offset="1" stop-color="black" stop-opacity="0"/>
 		</linearGradient>
+		<linearGradient id="Blue">
+			<stop offset="0" stop-color="black" stop-opacity="0"/>
+			<stop offset="0.5" stop-color="black" stop-opacity="0"/>
+			<stop offset="1" stop-color="blue"/>
+		</linearGradient>
+		<clipPath id="bound-box">
+			<rect x="0" y="0" width="1000" height="1000" />
+		</clipPath>
 		<g id="thing">
 			<path d="M0,0 a1,1 0 0,0 0,0"/>
 			<path d="M-50,50 a1,1 0 0,0 100,0"/>
@@ -47,7 +66,11 @@ xmlns="http://www.w3.org/2000/svg">
 			<path d="M-950,950 a1,1 0 0,0 1900,0"/>
 			<path d="M-1000,1000 a1,1 0 0,0 2000,0"/>
 		</g>
+		<g id="stuff" transform="rotate(45) translate(300,-400)">
+			<use href="#thing" stroke="url(#Blue)"/>
+			<use href="#thing" stroke="url(#Red)" transform="rotate(-90)"/>
+		</g>
 	</defs>
-	<use href="#thing"/>
-	<use href="#thing" transform="rotate(-90)"/>
+		<use class="stuff" href="#stuff" clip-path="url(#bound-box)" style="animation-delay: 0s"/>
+		<use class="stuff" href="#stuff" clip-path="url(#bound-box)" style="animation-delay: -1s"/>
 </svg>
