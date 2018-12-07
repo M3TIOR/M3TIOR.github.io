@@ -1,0 +1,29 @@
+
+/* Ashen's Soul */
+[data-skin=\"Ashen\"] #social{
+	/* Put SVG Transmutation Circle Here */
+	/* background-image: url(); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+[data-skin=\"Ashen\"] #navigation *{
+	--animation-color-originem: var(--color-primary-dark);
+	--animation-color-mono: #311010;
+	--animation-color-bi: #101031;
+	animation: GLOWborder-color102 10s infinite ease;
+}
+[data-skin=\"Ashen\"] .topic{
+	--animation-color-originem: var(--color-primary-dark);
+	--animation-color-mono: #311010;
+	--animation-color-bi: #101031;
+	animation: GLOWborder-color102 10s infinite ease;
+	border: 2px solid;
+}
+[data-skin=\"Ashen\"] .subject{
+	--animation-color-originem: var(--color-primary-dark);
+	--animation-color-mono: #311010;
+	--animation-color-bi: #101031;
+	animation: GLOWborder-color102 10s infinite ease;
+	border: 2px solid;
+}

@@ -1,0 +1,6 @@
+
+User-agent: *
+disallow: /icons/
+disallow: /art/
+disallow: *.js
+disallow: *.css

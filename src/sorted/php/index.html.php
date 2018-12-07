@@ -1,8 +1,3 @@
-<?php
-	/*
-	 *
-	 */
-?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie eq8 lt9 lt10 "><![endif]-->
 <!--[if IE 9]><html class="ie eq9 lt10 "><![endif]-->
@@ -21,50 +16,174 @@
 		<meta name="author" content="M3TIOR">
 		<link id="@LOGO" type="image/png" rel="favicon" href="favicon.png">
 		<link id="@COLORS" type="text/css" rel="stylesheet" href="color.css" />
-		<link id="@SKIN" type="text/css" rel="stylesheet" href="index.css" />
 		<link id="@GLOW" type="text/css" rel="stylesheet" href="glow.css" />
-		<link id="@CONTACT" type="text/css" rel="stylesheet" href="contact.css" />
-		<link id="@NAVIGATION" type="text/css" rel="stylesheet" href="navbar.css" />
 		<link id="@POWER" type="text/css" rel="stylesheet" href="power.css" />
 		<script id="@MUSCLE" type="text/javascript" src="muscle.js"></script>
+		<style id="@NAVIGATION"><?php echo $navbar->css; ?></style>
+		<style id="@CSS" type="text/css">
+		/*
+		 * M3TIOR 2017
+		 */
+
+		html{
+			/*
+			 * Global Variable / Value Descriptor Location
+			 */
+			--social-btn-size: 100;
+			--social-btn-count: 5;
+			--social-btn-perline: 3;
+			--social-btn-separation: var(--social-btn-size);
+			--social-btn-x-separation: calc(var(--social-btn-size) * 1);
+			--social-btn-y-separation: calc(var(--social-btn-size) * 1);
+			--social-pane-size-y: calc(var(--social-btn-size) * 2);
+			--social-pane-size-x: 450;
+
+			--subject-gutter-size: 2.5;
+			--subject-padding-size: var(--subject-gutter-size);
+			--subject-size: calc( 50 - calc(var(--subject-padding-size) + var(--subject-gutter-size)));
+			--subject-perline: 1;
+
+			/*--- GLOBAL FIXES ---*/
+			-webkit-padding-start: 0px;
+		}
+
+		/* ICONS */
+		[longdesc=Github]{
+			src: url(icons/iconmonstr-github-1.svg);
+			content: url(icons/iconmonstr-github-1.svg);
+		}
+		/*
+		[longdesc=Gitbook]{
+			src: url(https://avatars2.githubusercontent.com/u/7111340?v=3&s=400);
+			content: url(https://avatars2.githubusercontent.com/u/7111340?v=3&s=400);
+		}
+		*/
+		[longdesc=Linkedin]{
+			src: url(icons/iconmonstr-linkedin-4.svg);
+			content: url(icons/iconmonstr-linkedin-4.svg);
+		}
+		[longdesc=Youtube]{
+			src: url(icons/iconmonstr-youtube-4.svg);
+			content: url(icons/iconmonstr-youtube-4.svg);
+		}
+		[longdesc=Soundcloud]{
+			src: url(icons/iconmonstr-soundcloud-4.svg);
+			content: url(icons/iconmonstr-soundcloud-4.svg);
+		}
+		[longdesc=DeviantArt]{
+			src: url(icons/iconmonstr-deviantart-4.svg);
+			content: url(icons/iconmonstr-deviantart-4.svg);
+		}
+
+		body{
+			padding: 0px;
+			margin: 0px;
+			background-color: var(--color-primary);
+			color: var(--color-highlight);
+		}
+		h1, h2, h3, p{
+			text-align: center;
+		}
+		p{
+			vertical-align: top;
+		}
+
+		#content *{
+			padding-left: 2.5%;
+			padding-right: 2.5%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+		}
+
+		#social{
+			overflow-x: scroll;
+		}
+		#social *{
+			padding:0px;
+			margin:0px;
+			width: 100%;
+			height: 100%;
+		}
+		#social ul{
+			height: calc(var(--social-pane-size-y) * 1px);
+		}
+		#social div:nth-child(2){
+			width: calc(var(--social-pane-size-x, 450) * 1px);
+		}
+		#social li{
+			display: inline-block;
+			height: 50%;
+			width: 0px;
+			float: left;
+			line-height: 0px;
+			padding-left: calc( calc( 1 / var(--social-btn-perline) ) * 50%);
+			padding-right: calc( calc( 1 / var(--social-btn-perline) ) * 50%);
+		}
+		#social li:nth-child(4){
+			margin-left: calc( calc( 1 / var(--social-btn-perline) ) * 50%);
+		}
+		#social a{
+			display: block;
+			transform: translateX(-50%);
+			background-color: var(--color-primary);
+			border-radius: calc(var(--social-btn-size) * 1px);
+			width: calc(var(--social-btn-size) * 1px);
+			height: calc(var(--social-btn-size) * 1px);
+		}
+		#social ::-webkit-scrollbar-thumb{
+			background-color: var(--color-primary-light);
+		}
+		#social ::-webkit-scrollbar{
+			background-color: var(--color-primary-darker);
+		}
+
+		.subject{
+			padding: calc(var(--subject-padding-size) * 1%) !important;
+			margin-bottom: 0px;
+			margin: calc(var(--subject-gutter-size) * 1%);
+			padding-left: 0px !important;
+			padding-right: 0px !important;
+		}
+		.topic{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			padding-left: 0px !important;
+			padding-right: 0px !important;
+		}
+		.topic > h1, .topic > h2, .topic > h3{
+			flex: 1 0 50%;
+		}
+
+		.Hcenter{
+			display: block !important;
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+		.Vcenter{
+			display: block !important;
+			margin-top: auto !important;
+			margin-down: auto !important;
+		}
+		.center{
+			display: block !important;
+			margin: auto !important;
+		}
+
+		@media only screen and (min-width : 481px){
+			.subject{
+				flex-basis: calc(calc(var(--subject-size) * 1%) - 4px);
+			}
+		}
+		</style>
+		<script id="@JS" type="text/javascript">
+
+		</script>
 	</head>
 	<body data-skin="">
-		<input style="display: none;" type="checkbox" id="contactCTRL">
-		<input class="bone" type="checkbox" id="navbarCTRL">
-		<!-- Navbar insert  (Go tah hell Austin... mer... :P )-->
-		<div id="navigation">
-			<label for="navbarCTRL">
-				<span class="bone">Toggle Controls</span>
-				<img></img>
-			</label>
-			<div id="navigation-content">
-				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Feed</a></li>
-					<li><label for="contactCTRL">Contact</label></li>
-				</ul>
-				<div id="muscles"><!-- javascript buttons go here --></div>
-				<div id="copyright">
-					&copy;<span>Ruby Allison Rose</span>
-				</div>
-			</div>
-		</div>
-		<label id="contact" for="contactCTRL"><!--Alternative exit method for css desktop -->
-			<div>
-				<label for="contactCTRL">
-					<svg viewBox="1,0,21,21">
-						<rect y="10" width="25" height="5" transform="rotate(-45) translate(-12,3)"/>
-						<rect x="10" width="5" height="25" transform="rotate(135) translate(-13,-28)"/>
-					</svg>
-				</label>
-				<address>
-					<h1 style="display: none;" class="css-only">Ruby Allison Rose</h1>
-					<span class="bone">Contact me at:</span>
-					<a href="mailto:cplusplusook32@gmail.com">cplusplusook@gmail.com</a>
-					<a href="tel:3606905625">360-690-5625</a>
-				</address>
-			</div>
-		</label>
+		<?php echo $navbar->html; ?>
 		<div id="content">
 			<div class="color-primary-light full">
 				<h1 style="text-align: center;">

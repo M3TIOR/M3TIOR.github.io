@@ -1,0 +1,32 @@
+/*
+ * M3TIOR 2017
+ */
+
+html{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+
+	--color-mono: #160014;
+	--color-bi: #260024;
+	--color-tri: #360034;
+	--color-quad: #460044;
+	--color-penta: #560054;
+	--color-text: #E2D5E1;
+}
+
+.color-mono{
+	background-color: var(--color-mono);
+}
+.color-bi{
+	background-color: var(--color-bi);
+}
+.color-tri{
+	background-color: var(--color-tri);
+}
+.color-quad{
+	background-color: var(--color-quad);
+}
+.color-penta{
+	background-color: var(--color-penta);
+}

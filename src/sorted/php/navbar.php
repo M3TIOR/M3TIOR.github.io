@@ -1,3 +1,47 @@
+<?php
+
+$navbar = new stdObject();
+
+$navbar->html = <<<'EOD'
+<input class="bone" type="checkbox" id="contactCTRL">
+<input class="bone" type="checkbox" id="navbarCTRL">
+<!-- Navbar insert  (Go tah hell Austin... mer... :P )-->
+<div id="navigation">
+	<label for="navbarCTRL">
+		<span class="bone">Toggle Controls</span>
+		<img></img>
+	</label>
+	<div id="navigation-content">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Feed</a></li>
+			<li><label for="contactCTRL">Contact</label></li>
+		</ul>
+		<div id="muscles"><!-- javascript buttons go here --></div>
+		<div id="copyright">
+			&copy;<span>Ruby Allison Rose</span>
+		</div>
+	</div>
+</div>
+<label id="contact" for="contactCTRL"><!--Alternative exit method for css desktop -->
+	<div>
+		<label for="contactCTRL">
+			<svg viewBox="1,0,21,21">
+				<rect y="10" width="25" height="5" transform="rotate(-45) translate(-12,3)"/>
+				<rect x="10" width="5" height="25" transform="rotate(135) translate(-13,-28)"/>
+			</svg>
+		</label>
+		<address>
+			<h1 style="display: none;" class="css-only">Ruby Allison Rose</h1>
+			<span class="bone">Contact me at:</span>
+			<a href="mailto:cplusplusook32@gmail.com">cplusplusook@gmail.com</a>
+			<a href="tel:3606905625">360-690-5625</a>
+		</address>
+	</div>
+</label>
+EOD;
+
+$navbar->css <<<'EOD'
 /*
  * M3TIOR 2017
  *
@@ -83,12 +127,13 @@ html{
 #navigation #navigation-content > ul > li:hover{
 	text-decoration:underline;
 }
-#navigation #muscles{
+
+#muscles{
 	display: none;
 	padding: 10px;
 	width: calc(100% - 20px); /*for the padding*/
 }
-#navbarCTRL:checked ~ #navigation #muscles{
+#navbarCTRL:checked ~ #muscles{
 	pointer-events: all;
 	display: block;
 	z-index: 1;
@@ -157,7 +202,7 @@ html{
 		width: 100%;
 	}
 
-	#navigation #copyright{
+	#copyright{
 		position: absolute;
 		text-align: center;
 		font-size: 12px;
@@ -182,11 +227,6 @@ html{
 	#navigation > *{
 		display: inline-block;
 	}
-	#navigation > #navigation-content{
-		pointer-events: none;
-		position: absolute;
-		width: 100%;
-	}
 	#navigation > label{
 		position: absolute;
 		border-right: 1px solid var(--color-primary-dark);
@@ -195,26 +235,31 @@ html{
 	#navigation > label:hover{
 		background: radial-gradient(circle, var(--color-highlight) 30%, rgba(0, 0, 0, 0) 65%);
 	}
-	#navigation #navigation-content > ul{
+	#navigation-content{
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+	}
+	#navigation-content > ul{
 		position: absolute;
 		left: calc(var(--navbar-size) * 1px);
 		padding-top: calc(calc(var(--navbar-size) - var(--navbar-font-size)) * 0.5px);
 		padding-bottom: calc(calc(var(--navbar-size) - var(--navbar-font-size)) * 0.5px);
 		padding-left: 20px;
 	}
-	#navigation #muscles{
+	#muscles{
 		position: absolute;
 		top: calc(var(--navbar-size) * 1px);
 		background-color: var(--color-primary);
 		border-top: 2px solid var(--color-primary-dark);
 		box-shadow: 0px 4px 8px #000;
 	}
-	#navigation #copyright{
+	#copyright{
 		float: right;
 		padding: calc(var(--navbar-size) * 0.25px);
 		pointer-events: all;
 	}
-	#navigation #copyright span{
+	#copyright span{
 		position:absolute;
 		bottom:-15px;
 		right:0px;
@@ -224,7 +269,135 @@ html{
 		width: auto;
 		padding: 10px;
 	}
-	#navigation #copyright:hover span{
+	#copyright:hover span{
 		visibility: visible;
 	}
 }
+
+/*============================================================================*/
+
+/*
+ * M3TIOR 2017
+ *
+ *		Navbar Contact
+ */
+
+*{
+	/*
+	 * Global Variable / Value Descriptor Location
+	 */
+	--contact-color-primary: var(--color-primary, #360034);
+	--contact-color-primary-light: var(--color-primary-light ,#460044);
+	--contact-color-primary-dark: var(--color-primary-dark, #260024);
+	--contact-color-primary-darker: var(--color-primary-darker, #160014);
+	--contact-color-primary-lighter: var(--color-primary-lighter, #560054);
+	--contact-color-highlight: var(--color-primary-highlight, #E2D5E1);
+}
+
+html{
+	min-width: 200px;
+	min-height: 200px;
+}
+
+/*----- Main Toggle Conditional ------*/
+#contactCTRL:checked ~ #contact{	/* Window */
+	display: block;
+} /* ELSE */
+	#contact{
+		display: none;
+}
+#contactCTRL:checked ~ #contact *{	/* Content */
+	display: block;
+} /* ELSE */
+	#contact *{
+		display: none;
+}
+/*--------------------------------*/
+
+#contact{
+	display: none;
+	position: fixed;
+	background-color: rgba(0,0,0,0.4);
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#contact *{
+	display: none;
+	color: var(--contact-color-highlight);
+	text-decoration: none;
+	text-align: center;
+	border-radius: 10px;
+}
+
+#contact h1{
+	font-size: 1.2em;
+}
+#contact > div{
+	--size: 200;
+	background-color: var(--contact-color-primary);
+	box-shadow: 0 0 10px #000;
+	border-radius: 10px;
+	position: relative;
+	width: calc(var(--size) * 1px);
+	height: calc(var(--size) * 1px);
+	top: calc(50% - calc(var(--size) * 0.5px));
+	left: calc(50% - calc(var(--size) * 0.5px));
+}
+#contact > div > label{
+	position: absolute;
+	right: 0px;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid var(--contact-color-primary-dark);
+}
+#contact > div > label:hover{
+	background-color: var(--contact-color-primary-dark);
+}
+#contact > div > label > *{
+	fill: var(--contact-color-primary-lighter)
+}
+#contact > div > address{
+	position: relative;
+	padding: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#contact > div > address > a:hover{
+	text-decoration: underline;
+}
+
+@media only screen and (max-width : 200px), screen and (max-height : 200px){
+	/*Just invert the button controls here*/
+	/*----- Main Toggle Conditional ------*/
+	#contactCTRL:checked ~ #contact{	/* Window */
+		display: none;
+	} /* ELSE */
+		#contact{
+			display: block;
+	}
+	#contactCTRL:checked ~ #contact *{	/* Content */
+		display: none;
+	} /* ELSE */
+		#contact *{
+			display: block;
+	}
+	/*--------------------------------*/
+
+	/*
+	 * Change the background color for the dimming pannel so it doesn't
+	 * look like crap if a user has a really short screen, or a really
+	 * thin screen...
+	 */
+
+	#contact{
+		background-color: var(--contact-color-primary);
+	}
+}
+EOD;
+
+?>

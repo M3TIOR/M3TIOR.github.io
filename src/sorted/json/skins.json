@@ -1,0 +1,72 @@
+[
+	{
+		"name": "Darklight",
+		"description": "Kinship",
+		"colorPrimary": "#360034",
+		"colorPrimaryLight": "#460044",
+		"colorPrimaryLighter": "#560054",
+		"colorPrimaryDark": "#260024",
+		"colorPrimaryDarker": "#160014",
+		"colorContrast" : "#E2D5E1"
+	},
+	{
+		"name": "Ashen Soul",
+		"description": "An Ashen Soul, The Sword of Love & Pain",
+		"colorPrimary": "#252525",
+		"colorPrimaryLight": "#313131",
+		"colorPrimaryLighter": "#414141",
+		"colorPrimaryDark": "#111",
+		"colorPrimaryDarker": "#0A0A0A",
+		"colorContrast" : "#FFF"
+	},
+	{
+		"name": "Ruby",
+		"description": "The Result of Harmony",
+		"palette":{
+			"text":"",
+			"colors":[
+				"", "", "", "", ""
+			]
+		}
+	},
+	{
+		"name": "Allice",
+		"description": "A Soul, Hollowed",
+		"palette":{
+			"text":"",
+			"colors":[
+				"", "", "", "", ""
+			]
+		}
+	},
+	{
+		"name": "Onyx",
+		"description": "The Dark, Deals, in Burdened Friendship",
+		"palette":{
+			"text":"",
+			"colors":[
+				"", "", "", "", ""
+			]
+		}
+	},
+	{
+		"name": "Nitsua",
+		"description": "The Light, Love, in First Beginnings",
+		"palette":{
+			"text":"",
+			"colors":[
+				"", "", "", "", ""
+			]
+		}
+	},
+	{
+		"name": "Draco",
+		"description": "Requiem of Love",
+		"palette":{
+			"text":"",
+			"colors":[
+				"", "", "", "", ""
+			]
+		}
+	}
+]

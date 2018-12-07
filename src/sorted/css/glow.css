@@ -83,16 +83,3 @@ html{
 	75%{color: var(--animation-color-bi)}
 	100%{color: var(--animation-color-originem)}
 }
-
-
-@keyframes darkbluered {
-	0%{
-		background-color: 311010;
-	}
-	50%{
-		backgroung-color: var(--color-mono-dark);
-	}
-	100%{
-		background-color: 101031;
-	}
-}
